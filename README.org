@@ -1,0 +1,5 @@
+* Local LanguageTool Server with SSL (in Docker)
+
+Setup for a running a self-hosted instance of [[https://languagetool.org][LanguageTool]] inside Docker, but
+with a Caddy reverse proxy so you can use the browser extension with Firefox and
+Safari.
