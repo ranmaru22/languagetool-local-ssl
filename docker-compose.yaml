@@ -1,18 +1,10 @@
 version: "3.7"
 
 services:
-  caddy:
-    image: caddy:latest
-    restart: unless-stopped
-    links:
-      - "languagetool:lt"
-    ports:
-      - "8081:443"
-    volumes:
-      - $PWD/Caddyfile:/etc/caddy/Caddyfile
-
   languagetool:
     image: erikvl87/languagetool:latest
     restart: unless-stopped
+    expose:
+      - "8010"
     ports:
       - "8010:8010"

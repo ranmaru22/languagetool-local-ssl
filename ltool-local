@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+set -eE
+trap cleanup 1 2 3 6 ERR
+
+cleanup() {
+    docker compose down --remove-orphans
+}
+
+docker compose up -d
+caddy reverse-proxy --from localhost:8081 --to localhost:8010
